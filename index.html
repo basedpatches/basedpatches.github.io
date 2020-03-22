@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    
+    <head>
+        <title>Dungeons and Dice Rollers</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Compare distributions of damage dice rolls for your character in Dungeons & Dragons 5th edition.">
+        <meta name="author" content="patches">
+        <script src="js/plotly-latest.min.js"></script>
+    </head>
+    
+    <body>
+    
+        <h1>Damage Distributions</h1>
+        
+        <h2>Attack Workspace</h2>
+        
+        <div>
+            <label for="modAbil">Ability Modifier:</label>
+            <input id="modAbil" value="3" size="5px">
+            <label for="modProf">Proficiency Bonus:</label>
+            <input id="modProf" value="2" size="5px">
+            <label for="modAdd">Additional Modifiers:</label>
+            <input id="modAdd" value="0" size="5px">
+        </div>
+        <div>
+            <label for="bigButton">Calculate</label>
+            <input type="button" id="bigButton" value="Go">
+        </div>
+        <div>
+            <label for="displayResult">Roll needed to hit: </label>
+            <p id="displayResult">Blank</p>
+        </div>
+        <!--
+        <form>
+            <fieldset name="racial_abilities">
+                <legend>Racial Abilities</legend>
+                <p><input type="checkbox">Halfling Luck</p>
+            </fieldset>
+        </form>
+        <form>
+            <fieldset name="class_abilities">
+                <legend>Class Features</legend>
+                <p><input type="checkbox">Champion</p>
+            </fieldset>
+        </form>
+        <form>
+            <fieldset name="feat_options">
+                <legend>Feats</legend>
+                <p><input type="checkbox">Elven Accuracy</p>
+            </fieldset>
+        </form>
+        -->
+        <h2>Damage Workspace</h2>
+        
+        <script src="js/script.js"></script>
+
+    </body>
+        
+</html>
