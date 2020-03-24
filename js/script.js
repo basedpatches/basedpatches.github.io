@@ -27,28 +27,36 @@ function setInputFilter(textbox, inputFilter){
 var modAbil = document.getElementById("modAbil");
 var modProf = document.getElementById("modProf");
 var modAdd = document.getElementById("modAdd");
+var critValue = document.getElementById("critValue");
 
 setInputFilter(modAbil, function(value){
     return /^-?\d*$/.test(value);
 });
-
 setInputFilter(modProf, function(value){
     return /^\d*$/.test(value);
 });
-
 setInputFilter(modAdd, function(value){
     return /^-?\d*$/.test(value);
 });
+setInputFilter(critValue, function(value){
+    return /^\d*$/.test(value);
+});
 //END INPUT VALIDATION
 
-const acSpace = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30,];
+//BEGIN ATTACK WORKSPACE
+const acSpace = Array.from(new Array(21), (x,i) => i+5);
+const attackSpace = Array.from(new Array(20), (x,i) => i+1);
+
 
 document.getElementById("bigButton").onclick = function(){
-    let bonus = parseInt(modAbil.value, 10) + parseInt(modProf.value, 10) + parseInt(modAdd.value, 10);
-    let reqRoll = acSpace;
-    reqRoll.forEach(function(ac, index){
-        reqRoll[index] = ac - bonus;
+    let attackBonus = parseInt(modAbil.value, 10) + parseInt(modProf.value, 10) + parseInt(modAdd.value, 10);
+    let attackRoll = [];
+    attackSpace.forEach(function(roll, index){
+        attackRoll[index] = roll + attackBonus;
     });
-    document.getElementById("displayResult").innerHTML = reqRoll.toString();
-    reqRoll = acSpace;
+    document.getElementById("displayResult").innerHTML = attackRoll.toString();
+    
+    attackPlot = document.getElementById('attackSpace');
+	Plotly.newPlot(attackPlot, [{x:acSpace, y:acSpace}], {margin:{t:0}});
 };
+//END ATTACK WORKSPACE

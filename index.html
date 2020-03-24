@@ -13,7 +13,7 @@
     
         <h1>Damage Distributions</h1>
         
-        <h2>Attack Workspace</h2>
+        <h2>Workspace</h2>
         
         <div>
             <label for="modAbil">Ability Modifier:</label>
@@ -22,15 +22,42 @@
             <input id="modProf" value="2" size="5px">
             <label for="modAdd">Additional Modifiers:</label>
             <input id="modAdd" value="0" size="5px">
+            <label for="critValue">Critical Hit Value:</label>
+            <input id="critValue" value="20" size="5px">
+        </div>
+        <div>
+            <form>
+                <fieldset id="attType">
+                    <legend>Attack Roll</legend>
+                    <label for"normAttack">Normal</label>
+                    <input type="radio" id="normAttack" name="attType" checked="checked">
+                    <label for"advAttack">Advantage</label>
+                    <input type="radio" id="advAttack" name="attType">
+                    <label for"disAttack">Disadvantage</label>
+                    <input type="radio" id="disAttack" name="attType">
+                </fieldset>
+                <fieldset id="raceTrait">
+                    <legend>Racial Traits</legend>
+                    <label for"halfLuck">Lucky (Halfling)</label>
+                    <input type="checkbox" id="halfLuck">
+                </fieldset>
+                <fieldset id="feats">
+                    <legend>Feats</legend>
+                    <label for"elfAcc">Elven Accuracy</label>
+                    <input type="checkbox" id="elfAcc">
+                </fieldset>
+            </form>
         </div>
         <div>
             <label for="bigButton">Calculate</label>
             <input type="button" id="bigButton" value="Go">
         </div>
         <div>
-            <label for="displayResult">Roll needed to hit: </label>
+            <label for="displayResult">Attack roll result:</label>
             <p id="displayResult">Blank</p>
         </div>
+        <div id="attackSpace" style="width:600px;height:250px;"></div>
+        
         <!--
         <form>
             <fieldset name="racial_abilities">
@@ -51,7 +78,6 @@
             </fieldset>
         </form>
         -->
-        <h2>Damage Workspace</h2>
         
         <script src="js/script.js"></script>
 
